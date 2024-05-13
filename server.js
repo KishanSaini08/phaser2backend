@@ -29,12 +29,7 @@ io.on('connection', (socket) => {
         socket.broadcast.emit("btnClicks",(`Button ${btn}`))
     })
 
-    socket.on("position" , (da)=>{
-        io.emit("newPos" , da)
-    })
-      socket.on("clickPos",(data)=>{
-        socket.broadcast.emit("newclick" , data)
-      })
+    
     socket.on('disconnect', () => {
         console.log('user disconnected');
         if(socket.id === connectedUser[0]){
